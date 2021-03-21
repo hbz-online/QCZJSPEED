@@ -20,11 +20,9 @@ jobs:
         QCZJ_addCoinBODY: ${{ secrets.QCZJ_addCoinBODY }}
         QCZJ_addCoin2BODY: ${{ secrets.QCZJ_addCoin2BODY }}
         QCZJ_CASH: ${{ secrets.QCZJ_CASH }}
-        QCZJ_CASHTIME: ${{ secrets.QCZJ_CASHTIME }}
     steps:
       - name: Checkout
-        run: |
-          git clone https://github.com/hbz-online/JavaScript.git ~/JavaScript
+        uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -46,5 +44,3 @@ jobs:
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-
- 
